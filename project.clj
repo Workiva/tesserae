@@ -13,7 +13,8 @@
 
   :aliases {"docs" ["do" "clean-docs," "codox"]
             "clean-docs" ["shell" "rm" "-rf" "./documentation"]}
-  
-  :codox {:output-path "docs"
+
+  :codox {:output-path "documentation"
           :namespaces [tesserae.core]}
+
   :profiles {:dev [{:dependencies [[criterium "0.4.3"]]}]})
