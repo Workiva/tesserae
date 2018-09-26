@@ -6,7 +6,12 @@
   :plugins [[lein-codox "0.10.4"]]
   
   :source-paths ["src"]
+  :test-paths ["test"]
   :java-source-paths ["java-src"]
+
+  :aliases {"docs" ["do" "clean-docs," "codox"]
+            "clean-docs" ["shell" "rm" "-rf" "./documentation"]}
   
   :codox {:output-path "docs"
-          :namespaces [tesserae.core]})
+          :namespaces [tesserae.core]}
+  :profiles {:dev [{:dependencies [[criterium "0.4.3"]]}]})
