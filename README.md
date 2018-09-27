@@ -2,7 +2,7 @@
 
 *tessera*, Latin noun: A tally, token, ticket, or watchword used to assist identification and to signify promised payment or friendship.
 
-**Tessera** is a library providing an abstraction over futures, promises, and delays. Its premise is that these are all examples of a single thing -- a token representing some promised value. The differences between them lie in their execution models (i.e., "who does the work?").
+**Tesserae** is a library providing an abstraction over futures, promises, and delays. Its premise is that these are all examples of a single thing -- a token representing some promised value. The differences between them lie in their execution models (i.e., "who does the work?").
 
 For convenience of interoperability, the tessera type implements `clojure.lang.IDeref`, `clojure.lang.IBlockingDeref`, `clojure.lang.IPending`, `clojure.lang.IFn` (purely for compatibility with `clojure.core/deliver`), and `java.util.concurent.Future`.
 

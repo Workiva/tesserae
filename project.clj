@@ -1,5 +1,5 @@
-(defproject tesserae "1.0.0"
-  :description "Tesserae"
+(defproject com.workiva/tesserae "1.0.0"
+  :description "Tesserae: an abstraction over promises, futures, delays, etc."
   :url "https://github.com/Workiva/tesserae"
   :license {:name "Eclipse Public License 1.0"}
   :dependencies [[org.clojure/clojure "1.9.0"]
