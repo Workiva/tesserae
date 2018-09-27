@@ -122,7 +122,7 @@ Futures chained on top of delays will evaluate the delays:
 
 #### pipeline :annex-now
 
-The method `chain-freeload` has an odd execution model at first glance: whatever thread fulfills the previous tessera in the chain (the notifier, in our terminology above), will be forced to fulfill this tessera; however, if the previous tessera in the chain has *already* been fulfilled, then the instigator will (complain bitterly and) immediately complete the work, fulfilling the tessera.
+The :annex-now model is an odd one at first glance: whatever thread fulfills the previous tessera in the chain (the notifier, in our terminology above), will be forced to fulfill this tessera; however, if the previous tessera in the chain has *already* been fulfilled, then the instigator will (complain bitterly and) immediately complete the work, fulfilling the tessera.
 
 ```clojure
 (def fulfiller (t/promise))
