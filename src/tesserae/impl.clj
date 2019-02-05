@@ -343,7 +343,7 @@
   (Tessera. (CountDownLatch. 1)
             nil
             (volatile! ::ex/init)
-            (atom {:status :ready})
+            (atom {:status :pending})
             f
             ex-m/delay-model
             (Object.)
