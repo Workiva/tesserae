@@ -57,7 +57,6 @@
              assoc
              :doc (-> #'p/pipeline meta :doc))
 
-
 (defn promise
   "Returns a tessera corresponding to a regular promise in Clojure: its
   value can be set by any thread, once only, with `fulfil` or

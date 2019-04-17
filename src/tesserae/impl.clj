@@ -147,14 +147,14 @@
 ;;;;;;;;;;;;;;;;;;;;
 
 (deftype Tessera
-    [^CountDownLatch redemption-latch ;; only used to block derefs
-     pending-cnt ;; atom
-     value ;; volatile
-     state ;; atom: {:keys [status successors predecessors watches]}
-     f ;; IFn / Runnable TODO: make it a Runnable and use invoke everywhere
-     model ;; execution-model
-     executor-lock
-     executor-thread]
+         [^CountDownLatch redemption-latch ;; only used to block derefs
+          pending-cnt ;; atom
+          value ;; volatile
+          state ;; atom: {:keys [status successors predecessors watches]}
+          f ;; IFn / Runnable TODO: make it a Runnable and use invoke everywhere
+          model ;; execution-model
+          executor-lock
+          executor-thread]
   clojure.lang.IFn
   (invoke [this v]
     ;; for compatibility with clojure.core/deliver
@@ -235,11 +235,11 @@
         (future (execute this)))) ;; TODO: good idea? enables timeouts under delay-model
     (if (.await redemption-latch timeout-ms TimeUnit/MILLISECONDS)
       (cond (fumbled? this)
-          (throw @value)
-          (revoked? this)
-          (throw @value)
-          :else
-          @value)
+            (throw @value)
+            (revoked? this)
+            (throw @value)
+            :else
+            @value)
       timeout-val))
   (get-error [this]
     (when (or (fumbled? this)

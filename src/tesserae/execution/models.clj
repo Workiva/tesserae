@@ -108,7 +108,7 @@
       (.submit ^ExecutorService es
                ^Runnable #(attempt-fulfilment tessera))))
   (execution [es tessera stage]
-      (p/execution model tessera stage nil))
+    (p/execution model tessera stage nil))
   (execution [es tessera stage predecessor-status]
     (case stage
       :chain (case predecessor-status

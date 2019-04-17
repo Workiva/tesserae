@@ -20,7 +20,7 @@
 
 (deftest test:fulfilment-methods
   (let [p-1 (promise)
-        p-2 (promise) 
+        p-2 (promise)
         p-3 (tess/promise)
         p-4 (tess/promise)
         p-5 (tess/promise)]
@@ -250,7 +250,7 @@
                    (deliver p stub-me)
                    (throw (Exception. "simulated failure in with-redefs")))))
     (is (= :temp @p))
-        (is (= :original stub-me))))
+    (is (= :original stub-me))))
 
 (def ^:dynamic *test-value* 1)
 (deftest copied-future-fn-properly-retains-conveyed-bindings
