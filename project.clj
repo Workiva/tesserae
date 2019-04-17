@@ -15,8 +15,8 @@
                         {:url "https://repo.clojars.org"
                          :username :env/clojars_username
                          :password :env/clojars_password
-                         :sign-releases false}}  
-  
+                         :sign-releases false}}
+
   :source-paths ["src"]
   :test-paths ["test"]
   :java-source-paths ["java-src"]
@@ -26,7 +26,8 @@
             "java-docs" ["shell" "javadoc" "-d" "./documentation/java" "-notimestamp"
                          "./java-src/tesserae/CancellationExceptionInfo.java"]}
 
-  :codox {:output-path "documentation"
+  :codox {:namespaces [tesserae.core]
+          :themes [:rdash]
           :html {:transforms [[:title]
                               [:substitute [:title "Tesserae API Docs"]]
                               [:span.project-version]
@@ -34,7 +35,7 @@
                               [:pre.deps]
                               [:substitute [:a {:href "https://clojars.org/com.workiva/tesserae"}
                                             [:img {:src "https://img.shields.io/clojars/v/com.workiva/tesserae.svg"}]]]]}
-          :namespaces [tesserae.core]}
+          :output-path "documentation/clojure"}
 
   :profiles {:dev [{:dependencies [[criterium "0.4.3"]]}]
              :docs {:dependencies [[codox-theme-rdash "0.1.2"]]}})
