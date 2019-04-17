@@ -1,0 +1,24 @@
+{
+  "name": "tesserae",
+  "version": "1.0.0",
+  "description": "An abstraction over promises, futures, delays, etc.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Workiva/tesserae.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Workiva/tesserae/issues"
+  },
+  "homepage": "https://github.com/Workiva/tesserae#readme",
+  "dependencies": {
+    "markdown-toc": "^1.2.0"
+  }
+}

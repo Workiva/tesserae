@@ -1,5 +1,9 @@
 gen-docker:
 	docker build \
-	  --build-arg ARTIFACTORY_USER \
-		--build-arg ARTIFACTORY_PASS \
 		-f workivabuild.Dockerfile .
+
+github-pages:
+	bundle exec jekyll serve
+
+update-tocs:
+	./.circleci/scripts/update-tocs.sh
