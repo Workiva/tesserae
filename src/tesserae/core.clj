@@ -1,4 +1,4 @@
-;; Copyright 2017-2018 Workiva Inc.
+;; Copyright 2017-2019 Workiva Inc.
 ;;
 ;; Licensed under the Eclipse Public License 1.0 (the "License");
 ;; you may not use this file except in compliance with the License.
@@ -56,7 +56,6 @@
 (alter-meta! #'pipeline
              assoc
              :doc (-> #'p/pipeline meta :doc))
-
 
 (defn promise
   "Returns a tessera corresponding to a regular promise in Clojure: its

@@ -1,10 +1,30 @@
-# Tesserae
+# Tesserae [![Clojars Project](https://img.shields.io/clojars/v/com.workiva/tesserae.svg)](https://clojars.org/com.workiva/tesserae) [![CircleCI](https://circleci.com/gh/Workiva/tesserae/tree/master.svg?style=svg)](https://circleci.com/gh/Workiva/tesserae/tree/master)
 
 *tessera*, Latin noun: A tally, token, ticket, or watchword used to assist identification and to signify promised payment or friendship.
 
-```
-[com.workiva/tesserae "1.0.0"]
-```
+<!-- toc -->
+
+- [Overview](#overview)
+- [API Documentation](#api-documentation)
+  * [Clojure API documentation can be found here.](#clojure-api-documentation-can-be-found-here)
+  * [Java API documentation can be found here.](#java-api-documentation-can-be-found-here)
+- [Pipelining Tesserae:](#pipelining-tesserae)
+  * [ExecutionModel](#executionmodel)
+  * [Examples](#examples)
+    + [pipeline :future](#pipeline-future)
+    + [pipeline :delay](#pipeline-delay)
+    + [pipeline :annex-now](#pipeline-annex-now)
+- [Exceptional Behavior:](#exceptional-behavior)
+- [Revoking Tesserae](#revoking-tesserae)
+  * [Backwards-chaining revocations](#backwards-chaining-revocations)
+- [Callbacks](#callbacks)
+- [Maintainers and Contributors](#maintainers-and-contributors)
+  * [Active Maintainers](#active-maintainers)
+  * [Previous Contributors](#previous-contributors)
+
+<!-- tocstop -->
+
+## Overview
 
 **Tesserae** is a library providing an abstraction over futures, promises, and delays. Its premise is that these are all examples of a single thing -- a token representing some promised value. The differences between them lie in their execution models (i.e., "who does the work?").
 
@@ -31,6 +51,11 @@ Conceptually, this library is similar to [Guava's ListenableFuture](https://gith
 These all return a `Tessera`. They should work just as you would expect from Clojure.core's `promise`, `future`, and `delay`, except that `clojure.core/force` [won't](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Delay.java#L26) [work](https://github.com/clojure/clojure/blob/clojure-1.9.0-alpha14/src/clj/clojure/core.clj#L753) on tesserae.
 
 In addition, each Tessera implements [`java.util.concurrent.Future`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html), and when `Future/get` is called, it throws the exceptions you'd expect from a Future ([`CancellationException`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CancellationException.html), [`TimeoutException`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeoutException.html), [`ExecutionException`](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutionException.html), and [`InterruptedException`](https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html)).
+
+## API Documentation
+
+### [Clojure API documentation can be found here.](/documentation/clojure/index.html)
+### [Java API documentation can be found here.](/documentation/java/index.html)
 
 ## Pipelining Tesserae:
 
@@ -302,16 +327,12 @@ Register a function by calling `watch`. For cases in which a callback is potenti
 ;; "watch function 2 fired. Fumbled? false"
 ```
 
-## Contributing
+## Maintainers and Contributors
 
-1. Branch and PR to master
-2. Maintainers will review.
+### Active Maintainers
 
-Guidelines:
+-
 
- * [generally good style](https://github.com/bbatsov/clojure-style-guide)
- * [clear commit messages](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
- * tests where appropriate
+### Previous Contributors
 
-#### Contributors
-Timothy Dean <[timothy.dean@workiva.com](mailto:timothy.dean@workiva.com)>  
+- Timothy Dean <galdre@gmail.com>

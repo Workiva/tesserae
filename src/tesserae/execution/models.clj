@@ -1,4 +1,4 @@
-;; Copyright 2017-2018 Workiva Inc.
+;; Copyright 2017-2019 Workiva Inc.
 ;;
 ;; Licensed under the Eclipse Public License 1.0 (the "License");
 ;; you may not use this file except in compliance with the License.
@@ -108,7 +108,7 @@
       (.submit ^ExecutorService es
                ^Runnable #(attempt-fulfilment tessera))))
   (execution [es tessera stage]
-      (p/execution model tessera stage nil))
+    (p/execution model tessera stage nil))
   (execution [es tessera stage predecessor-status]
     (case stage
       :chain (case predecessor-status
