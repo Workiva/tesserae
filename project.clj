@@ -1,4 +1,4 @@
-(defproject com.workiva/tesserae "1.0.0"
+(defproject com.workiva/tesserae "1.0.1"
   :description "An abstraction over promises, futures, delays, etc."
   :url "https://github.com/Workiva/tesserae"
 
