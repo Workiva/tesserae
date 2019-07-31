@@ -18,6 +18,14 @@
   (:import [tesserae.impl Tessera]
            [java.util.concurrent CancellationException]))
 
+(deftest test:delay-delays
+  (let [a (atom 0)
+        t (tess/delay (do (swap! a inc)
+                          10))]
+    (is (= 0 @a))
+    (is (= 10 @t))
+    (is (= 1 @a))))
+
 (deftest test:fulfilment-methods
   (let [p-1 (promise)
         p-2 (promise)
